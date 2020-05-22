@@ -36,23 +36,9 @@ Return Root
 
 
 B. Travellingproblem
+
 In travelling salesman problem, the main issue was the polynomial time complexity. The complexity of the n nodes is n! combinations to find the optimal route of n nodes. If we apply this algorithm on the real-world example with multiple address to find the shortest route between all the nodes. As there would be multiple address n! would take a large amount of time to compute the optimal distance. Hence algorithm would take a significant amount of time to compute the minimal distance between the points. It won’t provide the optimal solution, but the time taken by algorithm is significantly less than available solutions for travelling salesman problem.
 The algorithm takes input of a text file containing all the address that a travelling man has to visit. The first address is the starting point for the algorithm. Then it takes all the address as the input and forms clusters with respect to the distance between them. We can manually set the cluster size to compute clusters. Cluster size is the accepted distance between the address. Algorithm takes O(kn) time to form clusters. Where k is the number of clusters. The worst case would be every point is farthest from each other or our cluster size is inappropriate according to the data input then it would take O(n2) complexity to take input and form k clusters. After cluster formation we sort the cluster according to their midpoints to visit the. For Example, we have 5 clusters then the order of travel could be [1,3,4,5,2] or etc. The algorithm would take O(k2) time to sort the clusters as we don’t have distances between midpoints of the clusters hence, We need to compute distance between them and then make an order of the clusters. After we have made an order of the cluster we need to sort the internal address of the cluster so as to visit the internal clusters in the minimal order possible.
-and manipulate data. I have used ID3 (Iterative Dichotomiser 3) algorithm that uses the concept of Information gain to split data at every level of building a tree. Number of children is the number of unique classes the node has. ID3 algorithm is biased on the data which has maximum samples. Hence, we use methods like post and pre purring to make the tree unbiased and increase the accuracy of the model.
-Travelling Problem
-I have used the python as the programming tool and Jupyter notebook as the software tool to develop this algorithm. Along with it I have used libraries such as google-maps and geodesic and Api of google maps to find the distance between address as I am working on real world data. I have used arbitrary set of address to test the algorithm. Algorithm computes the overall minimal distance between the address or data points. But it does not provide an optimal solution to the problem.
-B. ImplementationandToolsUsed Decision Trees
-I have used the python as a developing tool and developed many functions to do my work seamlessly. At first, I have read the data into a pandas Data-frame. Then I have pass the Data-frame int a function Build_nodes.
-Build_nodes: It takes the parameter as data frame and then it separates the last column that is known as the decision-making column(Y). Then, we find the total Information Gain of the model which is given by finding information gain of parameter (Y).
-If the total Information Gain is 0 then it indicates we don’t have to make a prediction as no attribute is contributing to the prediction and there is only one class in the output Y.
-Else, we start building the tree. First find the Information Gain of the entire dataset excluding the output parameter Y. and we select the attribute which gives the highest Information Gain and make that attribute as the root node and after doing that we try to find gain and choosing the param with max gain again and again until we find the Information gain to be 0. That indicates we don’t have to split the data more.
-FindGain:
-This function is required to find gain of each attribute to return the value to build nodes to select the attribute with max gain. The formula for the gain is
-The information gain is calculated by finding entropy of each attribute hence, to find entropy of each attribute we call the function FindEntropy().
-FindEntropy:
-The function find entropy return the value of the entropy of the attribute hence, It takes the value of an attribute(column). The formula for calculating entropy is,
-Hence, Entropy is an import feature while calculating the gain. Of an attribute.
-
 
 Algorithm:
 1. While read each line from the text file;
